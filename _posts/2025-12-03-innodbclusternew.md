@@ -45,3 +45,7 @@ JavaScript, Python 및 SQL 지원
 자동으로 서버 페일오버, 그룹 멤버쉽 관리, 데이터 복제 등을 담당하는 핵심 컴포넌트
 
 InnoDB 스토리지 엔진과 통합되어  GTID 기반으로 복제 제공
+
+
+
+![image-20251203161534219](../images/2025-12-03-innodbclusternew/image-20251203161534219.png)
