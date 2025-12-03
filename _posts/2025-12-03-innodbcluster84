@@ -1,1 +1,13 @@
+layout : single
+title : " InnoDB Cluster with MySQL 8.4 에 대한 포스팅입니다."
+
+
+
+**InnoDB Cluster 구성도 **
+
+![image-20251203135921129](../images/2025-12-03-innodbcluster84/image-20251203135921129.png)
+
+
+
+MySQL 8.4 에서 변경된 부분은 크게 없지만 옵션 설정부분이 변경된 부분이 있습니다. 
 
