@@ -1,15 +1,20 @@
 layout : single
+
 title : " InnoDB Cluster with MySQL 8.4 에 대한 포스팅입니다."
 
 
 
 **InnoDB Cluster 구성도 **
 
+
+
 ![스크린샷 2025-12-03 오후 1.58.26](../images/2025-12-03-innodbclusternew/스크린샷 2025-12-03 오후 1.58.26.png)
 
 
 
 MySQL 8.4 에서 변경된 부분은 크게 없지만 옵션 설정부분이 변경된 부분이 있습니다.  InnoDB Cluster는 MySQL Router, MySQL Shell, Gruop Replication 으로 구성되어 있습니다.
+
+
 
 **MySQL Router**  
 
