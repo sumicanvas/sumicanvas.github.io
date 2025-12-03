@@ -46,6 +46,56 @@ JavaScript, Python 및 SQL 지원
 
 InnoDB 스토리지 엔진과 통합되어  GTID 기반으로 복제 제공
 
+**1번째 인스턴스를 이용해 cluster 생성** 
 
+$ mysqlsh admin@127.0.0.1:3306
+
+> dba.checkInstanceConfiguration("admin@127.0.0.1:3306")
 
 ![image-20251203161534219](../images/2025-12-03-innodbclusternew/image-20251203161534219.png)
+
+
+
+dba.checkInstanceConfiguration("admin@127.0.0.1:3306")
+
+![image-20251203161902749](../images/2025-12-03-innodbclusternew/image-20251203161902749.png)
+
+
+
+myc = dba.createCluster('myc')
+
+![image-20251203162021909](../images/2025-12-03-innodbclusternew/image-20251203162021909.png)
+
+
+
+**2번째 인스턴스  cluster에 추가** 
+
+dba.configureInstance("admin@127.0.0.1:3302")
+
+dba.checkInstanceConfiguration("admin@127.0.0.1:3302")
+
+myc.addInstance("admin@127.0.0.1:3302")
+
+인스턴스 추가 시 Clone 방식으로 추가합니다. 데이터가 많을 경우에는 첫번째 인스턴스를 백업 후 복구 후에  Incremetal 로 진행하시면 됩니다.
+
+![image-20251203162236547](../images/2025-12-03-innodbclusternew/image-20251203162236547.png)
+
+![image-20251203162311480](../images/2025-12-03-innodbclusternew/image-20251203162311480.png)
+
+
+
+**3번째 인스턴스도 동일하게 cluster에 추가** 
+
+dba.configureInstance("admin@127.0.0.1:3303")
+
+dba.checkInstanceConfiguration("admin@127.0.0.1:3303")
+
+myc.addInstance("admin@127.0.0.1:3303")
+
+
+
+**생성된 클러스터 상태 확인 ** 
+
+myc.status()
+
+![image-20251203162846173](../images/2025-12-03-innodbclusternew/image-20251203162846173.png)
